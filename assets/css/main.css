@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* html{
+  scroll-behavior: smooth;
+} */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-overlay1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(250, 244, 244, 0.5);
+  }
+
+  .text-overlay3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    background-color: rgba(250, 244, 244, 0.5);
+  }
+
+
+  .text {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .text1 {
+    color: #000;
+    font-size: 46px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 90px;
+  }
+
+
+  .price {
+    display: inline-block;
+    padding: 4px 16px;
+    background: transparent;
+    border: 2px solid #e5345b;
+    color: #e5345b;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.45s ease;
+    cursor: pointer;
+  }
+  .price:hover {
+    letter-spacing: 1px;
+  }
+
+  .heart{
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    display: inline-flex;
+    top: 5px;
+    right: 15px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.45s ease;
+  }
+
+  .boxcontainer {
+    width: 300px;
+    height: 42px;
+    padding: 0 10px;
+    border: 4px solid #2980b9;
+    border-radius: 50px;
+  }
+  .elementsContainer {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .search {
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #424242;
+    font-weight: 500;
+  }
+  .search:focus {
+    outline: none;
+  }
+
+
+  /* Set font and text color */
+.v-table {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Add padding to cells */
+.v-table td,
+.v-table th {
+  padding: 8px;
+}
+
+/* Add border to cells and table */
+.v-table,
+.v-table td,
+.v-table th {
+  border: 1px solid #ccc;
+}
+
+/* Style the header row */
+.v-table thead {
+  background-color: #f2f2f2;
+}
+
+/* Style alternating rows */
+.v-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style hover effect on rows */
+.v-table tbody tr:hover {
+  background-color: #ddd;
+}
+  /* #e5345b */
+
+.carousel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  .carousel__viewport {
+    width: 90%;
+  }
