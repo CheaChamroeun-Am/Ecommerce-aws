@@ -10,7 +10,11 @@
       >
         <div class="text-overlay">
           <p class="text" data-aos="fade-up" data-aos-delay="500">#Login</p>
-          <p class="text-white text-center" data-aos="fade-right" data-aos-delay="500">
+          <p
+            class="text-white text-center"
+            data-aos="fade-right"
+            data-aos-delay="500"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
@@ -27,7 +31,7 @@
                   <v-row>
                     <v-col cols="12" md="6">
                       <v-card-text data-aos="fade-right" data-aos-delay="500">
-                        <p class="text-h4 font-weight-bold" >
+                        <p class="text-h4 font-weight-bold">
                           Hi, Welcome Back! 👋
                         </p>
                         <p class="grey--text">
@@ -39,7 +43,8 @@
                         v-model="valid"
                         class="mt-5"
                         @submit.prevent="handleLogin"
-                        data-aos="fade-up" data-aos-delay="500"
+                        data-aos="fade-up"
+                        data-aos-delay="500"
                       >
                         <!-- Email -->
                         <v-text-field
@@ -143,8 +148,19 @@
                         style="border-radius: 0 40px 0px 0px"
                       >
                         <div style="text-align: center; padding: 180px 0">
-                          <h3 class="text-h5" data-aos="fade-right" data-aos-delay="500">Don't have an account</h3>
-                          <p class="mt-3 text-grey" style="font-size: 15px" data-aos="fade-up" data-aos-delay="500">
+                          <h3
+                            class="text-h5"
+                            data-aos="fade-right"
+                            data-aos-delay="500"
+                          >
+                            Don't have an account
+                          </h3>
+                          <p
+                            class="mt-3 text-grey"
+                            style="font-size: 15px"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                          >
                             Enter your personal <br />
                             information and join us!
                           </p>
@@ -153,7 +169,8 @@
                             width="250px"
                             class="mt-6"
                             @click="step++"
-                            data-aos="fade-up" data-aos-delay="500"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
                             >Signup</v-btn
                           >
                         </div>
@@ -172,8 +189,19 @@
                         style="border-radius: 40px 0 0 0"
                       >
                         <div style="text-align: center; padding: 180px 0">
-                          <h3 class="text-h5" data-aos="fade-up" data-aos-delay="500">Already have an account ?</h3>
-                          <p class="mt-3 text-grey" style="font-size: 15px" data-aos="fade-up" data-aos-delay="500">
+                          <h3
+                            class="text-h5"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                          >
+                            Already have an account ?
+                          </h3>
+                          <p
+                            class="mt-3 text-grey"
+                            style="font-size: 15px"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                          >
                             Keep connect with us and <br />
                             login with your personal info
                           </p>
@@ -182,7 +210,8 @@
                             width="250px"
                             class="mt-6"
                             @click="step--"
-                            data-aos="fade-up" data-aos-delay="500"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
                             >Login</v-btn
                           >
                         </div>
@@ -191,7 +220,7 @@
 
                     <v-col cols="12" md="6">
                       <v-card-text data-aos="fade-right" data-aos-delay="500">
-                        <p class="text-h4 font-weight-bold" >
+                        <p class="text-h4 font-weight-bold">
                           Become one of us 🤘
                         </p>
                         <p class="text-grey">
@@ -203,7 +232,8 @@
                         v-model="valid"
                         class="mt-5"
                         @submit.prevent="handleSignup"
-                        data-aos="fade-up" data-aos-delay="500"
+                        data-aos="fade-up"
+                        data-aos-delay="500"
                       >
                         <!-- Username -->
                         <v-text-field
@@ -305,6 +335,14 @@
       </template>
     </v-snackbar>
 
+    <v-snackbar v-model="loginErrorSnackbar" color="red" bottom right>
+      This user is not found!🙅‍♂️
+
+      <template v-slot:actions>
+        <v-btn color="white" @click="loginSnackbar = false"> Close </v-btn>
+      </template>
+    </v-snackbar>
+
     <v-snackbar v-model="signupSnackbar" color="green" bottom right>
       Signup Successfully!🎉
 
@@ -319,10 +357,11 @@
 import Cookies from "js-cookie";
 export default {
   data: () => ({
+    hasError: null,
     step: 1,
     valid: false,
-    email: "",
-    password: "",
+    email: "hyein@gmail.com",
+    password: "hyein123",
     passwordShow: false,
     signupName: "",
     signupEmail: "",
@@ -330,6 +369,7 @@ export default {
     isLoading: false,
     loginSnackbar: false,
     signupSnackbar: false,
+    loginErrorSnackbar: false,
     emailRules: [
       (value) => {
         if (value) return true;
@@ -378,7 +418,6 @@ export default {
         return "Username must be less than 50 characters.";
       },
     ],
-
   }),
   methods: {
     async handleLogin() {
@@ -386,29 +425,35 @@ export default {
 
       this.isLoading = true;
 
-      const { data } = await useFetch("http://localhost:3002/api/users/login", {
-        method: "post",
-        body: {
-          email: this.email,
-          password: this.password,
-        },
-      });
+      const { data, error } = await useFetch(
+        "http://localhost:3002/api/users/login",
+        {
+          method: "post",
+          body: {
+            email: this.email,
+            password: this.password,
+          },
+        }
+      );
+
+      if (error.value) {
+        this.loginErrorSnackbar = true;
+        this.isLoading = false;
+        return;
+      }
+
+      const auth = useAuth();
+      auth.value.isAuthenticated = true;
 
       // set expiration date to 1 day
       Cookies.set("token", data.value.token);
-
-      console.log(data.value);
+      // Cookies.set("token", data.value.token, { expires: 1 });
 
       this.isLoading = false;
 
       this.loginSnackbar = true;
 
-      const auth = useAuth();
-
-      auth.value.isAuthenticated = true;
-
       navigateTo("/");
-
     },
 
     async handleSignup() {
@@ -429,7 +474,5 @@ export default {
   },
 };
 </script>
-
-
 
 <style scoped></style>

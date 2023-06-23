@@ -180,6 +180,9 @@
         v-else
       ></v-btn>
 
+      {{ auth.isAuthenticated }}
+      
+
       <!-- Favorite -->
       <v-btn class="text-none hidden-sm-and-down" stacked>
         <v-badge :content="$store.getters['favoriteCount']" color="error">
@@ -329,11 +332,11 @@ const auth = useAuth();
 
 // const isAuthenticated = ref(false)
 
-onMounted(() => {
-  if (Cookies.get("token")) {
-    isAuthenticated.value = true;
-  }
-});
+// onMounted(() => {
+//   if (Cookies.get("token")) {
+//     isAuthenticated.value = true;
+//   }
+// });
 
 const store = useStore();
 
