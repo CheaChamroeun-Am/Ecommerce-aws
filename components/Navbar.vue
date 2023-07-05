@@ -180,7 +180,6 @@
         v-else
       ></v-btn>
 
-      {{ auth.isAuthenticated }}
       
 
       <!-- Favorite -->
