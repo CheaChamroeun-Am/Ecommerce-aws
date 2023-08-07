@@ -9,8 +9,14 @@
         cover
       >
         <div class="text-overlay">
-          <p class="text" data-aos="fade-right" data-aos-delay="500">#Stay Home</p>
-          <p class="text-white text-center" data-aos="fade-up" data-aos-delay="500">
+          <p class="text" data-aos="fade-right" data-aos-delay="500">
+            #Stay Home
+          </p>
+          <p
+            class="text-white text-center"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
@@ -482,9 +488,6 @@
 </template>
 
 <script setup>
-
-
-
 const styles = ref([
   { title: "Lifestyle", count: "10" },
   { title: "Running", count: "7" },
@@ -512,7 +515,9 @@ const searchTerm = ref("");
 
 const grid = ref(true);
 
-const { data: products } = await useFetch("http://localhost:3002/api/products");
+const { data: products } = await useFetch(
+  "http://3.90.217.148:3002/api/products"
+);
 
 console.log(products.value);
 

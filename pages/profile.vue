@@ -197,7 +197,7 @@ const handleLogout = () => {
   navigateTo("/");
 };
 
-const {data : purchase} = await useFetch("http://localhost:3002/api/orders", {
+const {data : purchase} = await useFetch("http://3.90.217.148:3002/api/orders", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",

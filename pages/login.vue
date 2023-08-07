@@ -426,7 +426,7 @@ export default {
       this.isLoading = true;
 
       const { data, error } = await useFetch(
-        "http://localhost:3002/api/users/login",
+        "http://3.90.217.148:3002/api/users/login",
         {
           method: "post",
           body: {
@@ -457,7 +457,7 @@ export default {
     },
 
     async handleSignup() {
-      const { data } = await useFetch("http://localhost:3002/api/users", {
+      const { data } = await useFetch("http://3.90.217.148:3002/api/users", {
         method: "post",
         body: {
           name: this.signupName,

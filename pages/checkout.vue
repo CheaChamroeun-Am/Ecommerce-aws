@@ -312,7 +312,7 @@ const handleCheckout = () => {
         onApprove: async (data, actions) => {
           const token = Cookies.get("token");
           console.log(carts.value);
-          await fetch("http://localhost:3002/api/orders", {
+          await fetch("http://3.90.217.148:3002/api/orders", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

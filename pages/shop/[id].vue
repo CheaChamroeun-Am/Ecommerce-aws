@@ -324,7 +324,6 @@
         <v-btn color="white" @click="commentSnackbar = false"> Close </v-btn>
       </template>
     </v-snackbar>
-
   </v-main>
 </template>
 
@@ -343,7 +342,7 @@ const commentSnackbar = ref(false);
 const id = route.params.id;
 
 const { data: product } = await useFetch(
-  `http://localhost:3002/api/products/${id}`
+  `http://3.90.217.148:3002/api/products/${id}`
 );
 
 const ratingReview = computed(() => {
@@ -394,7 +393,7 @@ const handleReview = async () => {
     navigateTo("/login");
   } else {
     const { data } = await useFetch(
-      `http://localhost:3002/api/products/${id}/review`,
+      `http://3.90.217.148:3002/api/products/${id}/review`,
       {
         method: "POST",
         body: {

@@ -8,9 +8,13 @@
         class="bg-grey-lighten-2"
         cover
       >
-        <div class="text-overlay" >
+        <div class="text-overlay">
           <p class="text" data-aos="fade-up" data-aos-delay="500">#Read More</p>
-          <p class="text-white text-center" data-aos="fade-right" data-aos-delay="500">
+          <p
+            class="text-white text-center"
+            data-aos="fade-right"
+            data-aos-delay="500"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
@@ -165,7 +169,7 @@ const recent = ref([
   },
 ]);
 
-const { data: blogs } = await useFetch("http://localhost:3002/api/blog");
+const { data: blogs } = await useFetch("http://3.90.217.148:3002/api/blog");
 console.log(blogs.value);
 
 // Pagination

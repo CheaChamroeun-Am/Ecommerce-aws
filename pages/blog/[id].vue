@@ -8,8 +8,14 @@
       cover
     >
       <div class="text-overlay">
-        <p class="text" data-aos="fade-right" data-aos-delay="500">#Read More</p>
-        <p class="text-white text-center" data-aos="fade-up" data-aos-delay="500">
+        <p class="text" data-aos="fade-right" data-aos-delay="500">
+          #Read More
+        </p>
+        <p
+          class="text-white text-center"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         </p>
       </div>
@@ -22,17 +28,24 @@
       height="450"
       width="100%"
       class="bg-grey-lighten-2 mt-10"
-      data-aos="zoom-in-up" data-aos-delay="250"
+      data-aos="zoom-in-up"
+      data-aos-delay="250"
     ></v-img>
 
-    <h1 class="mt-8" data-aos="fade-right" data-aos-delay="500">{{ blog.title }}</h1>
-    <p style="color: grey" data-aos="fade-up" data-aos-delay="500">Published At : 02/07/2023</p>
+    <h1 class="mt-8" data-aos="fade-right" data-aos-delay="500">
+      {{ blog.title }}
+    </h1>
+    <p style="color: grey" data-aos="fade-up" data-aos-delay="500">
+      Published At : 02/07/2023
+    </p>
     <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="500">
       <v-icon icon="mdi-comment-text-outline" color="#e5345b"></v-icon>
       <p class="ml-2">5 Comments</p>
     </div>
 
-    <p class="mt-10" data-aos="fade-up" data-aos-delay="500">{{ blog.article }}</p>
+    <p class="mt-10" data-aos="fade-up" data-aos-delay="500">
+      {{ blog.article }}
+    </p>
     <p class="mt-7 font-weight-bold" data-aos="fade-up" data-aos-delay="500">
       “Ridiculus mus mauris vitae ultricies leo. Non enim praesent elementum
       facilisis leo vel fringilla. Tincidunt nunc pulvinar sapien et ligula
@@ -81,7 +94,12 @@
 
       <div class="d-flex mt-8" v-for="c in comments" :key="c">
         <p data-aos="fade-right" data-aos-delay="500">{{ c.id }}.</p>
-        <v-card class="ml-5 pa-5" width="100%" data-aos="fade-up" data-aos-delay="500">
+        <v-card
+          class="ml-5 pa-5"
+          width="100%"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <div class="d-flex">
             <v-icon icon="mdi-calendar-month-outline" color="#e5345b"></v-icon>
             <p class="ml-2">{{ c.date }}</p>
@@ -107,7 +125,8 @@
       <p
         class="text-uppercase mt-15 font-weight-medium"
         style="font-size: 20px"
-        data-aos="fade-right" data-aos-delay="500"
+        data-aos="fade-right"
+        data-aos-delay="500"
       >
         Leave a comment
       </p>
@@ -153,7 +172,9 @@ const route = useRoute();
 
 const id = route.params.id;
 
-const { data: blog } = await useFetch(`http://localhost:3002/api/blog/${id}`);
+const { data: blog } = await useFetch(
+  `http://3.90.217.148:3002/api/blog/${id}`
+);
 console.log(blog.value);
 
 const comments = ref([

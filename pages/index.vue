@@ -345,7 +345,7 @@ import Cookies from "js-cookie";
 const store = useStore();
 const route = useRoute();
 
-const { data: products } = await useFetch("http://localhost:3002/api/products");
+const { data: products } = await useFetch("http://3.90.217.148:3002/api/products");
 
 const handleFollow = () => {
   window.open("https://www.facebook.com/", "_blank");

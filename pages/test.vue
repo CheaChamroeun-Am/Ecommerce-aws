@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import axios from "axios";
 
 const searchTerm = ref("");
 const queryTimeout = ref(null);
@@ -22,13 +22,13 @@ const handleAllSearch = () => {
   clearTimeout(queryTimeout.value);
   queryTimeout.value = setTimeout(async () => {
     if (searchTerm !== "") {
-
-      const res = await axios.get(`http://localhost:3002/api/products/${searchTerm.value}`);
+      const res = await axios.get(
+        `http://3.90.217.148:3002/api/products/${searchTerm.value}`
+      );
       console.log(res.data);
     }
 
-    products.value = null
-    
+    products.value = null;
   }, 300);
 };
 </script>

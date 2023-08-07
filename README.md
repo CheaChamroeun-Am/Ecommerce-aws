@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -20,7 +21,7 @@ pnpm install
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on http://3.90.217.148:3000
 
 ```bash
 npm run dev
@@ -40,8 +41,10 @@ Locally preview production build:
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-=======
+# Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
 # Ecommerce-aws
+
 This is for cloud subject
->>>>>>> 10005fc5189621c4f95a5ad3dab6d0727be6b215
+
+> > > > > > > 10005fc5189621c4f95a5ad3dab6d0727be6b215
