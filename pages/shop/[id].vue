@@ -342,7 +342,7 @@ const commentSnackbar = ref(false);
 const id = route.params.id;
 
 const { data: product } = await useFetch(
-  `http://3.90.217.148:3002/api/products/${id}`
+  `http://18.208.219.245:3002/api/products/${id}`
 );
 
 const ratingReview = computed(() => {
@@ -393,7 +393,7 @@ const handleReview = async () => {
     navigateTo("/login");
   } else {
     const { data } = await useFetch(
-      `http://3.90.217.148:3002/api/products/${id}/review`,
+      `http://18.208.219.245:3002/api/products/${id}/review`,
       {
         method: "POST",
         body: {

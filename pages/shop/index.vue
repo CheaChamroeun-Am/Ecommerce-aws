@@ -516,7 +516,7 @@ const searchTerm = ref("");
 const grid = ref(true);
 
 const { data: products } = await useFetch(
-  "http://3.90.217.148:3002/api/products"
+  "http://18.208.219.245:3002/api/products"
 );
 
 console.log(products.value);

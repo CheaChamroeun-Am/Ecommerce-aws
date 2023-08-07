@@ -21,7 +21,7 @@ pnpm install
 
 ## Development Server
 
-Start the development server on http://3.90.217.148:3000
+Start the development server on http://18.208.219.245:3000
 
 ```bash
 npm run dev

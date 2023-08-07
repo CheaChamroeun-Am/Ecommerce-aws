@@ -315,7 +315,14 @@
       <v-card class="mt-15" color="#f5f5f7">
         <v-row class="d-flex align-center">
           <v-col cols="12" md="6">
-            <h1 class="text-center" style="font-size: 100px" data-aos="fade-right" data-aos-delay="500">FAQ's</h1>
+            <h1
+              class="text-center"
+              style="font-size: 100px"
+              data-aos="fade-right"
+              data-aos-delay="500"
+            >
+              FAQ's
+            </h1>
           </v-col>
 
           <v-col cols="12" md="6">
@@ -345,7 +352,9 @@ import Cookies from "js-cookie";
 const store = useStore();
 const route = useRoute();
 
-const { data: products } = await useFetch("http://3.90.217.148:3002/api/products");
+const { data: products } = await useFetch(
+  "http://18.208.219.245:3002/api/products"
+);
 
 const handleFollow = () => {
   window.open("https://www.facebook.com/", "_blank");
@@ -365,5 +374,4 @@ const faq = ref([
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ]);
-
 </script>

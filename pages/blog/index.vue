@@ -169,7 +169,7 @@ const recent = ref([
   },
 ]);
 
-const { data: blogs } = await useFetch("http://3.90.217.148:3002/api/blog");
+const { data: blogs } = await useFetch("http://18.208.219.245:3002/api/blog");
 console.log(blogs.value);
 
 // Pagination

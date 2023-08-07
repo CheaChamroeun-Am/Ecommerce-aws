@@ -1339,7 +1339,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-ae04e7ba.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-417e5e0d.mjs').then((m) => m.default || m)
   },
   {
     name: "blog",
@@ -1348,7 +1348,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-081ee217.mjs').then((m) => m.default || m)
+    component: () => import('./index-0e8690fe.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "checkout",
@@ -1357,7 +1357,7 @@ const _routes = [
     meta: __nuxt_page_meta$1 || {},
     alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
     redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import('./checkout-01e58dca.mjs').then((m) => m.default || m)
+    component: () => import('./checkout-2519cce8.mjs').then((m) => m.default || m)
   },
   {
     name: "contact",
@@ -1375,7 +1375,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-c86d3402.mjs').then((m) => m.default || m)
+    component: () => import('./index-bb3e36ad.mjs').then((m) => m.default || m)
   },
   {
     name: "login",
@@ -1384,7 +1384,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./login-75a93745.mjs').then((m) => m.default || m)
+    component: () => import('./login-8b0b8784.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "profile",
@@ -1393,7 +1393,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./profile-e638a9c8.mjs').then((m) => m.default || m)
+    component: () => import('./profile-dffdcbb8.mjs').then((m) => m.default || m)
   },
   {
     name: "shop-id",
@@ -1402,7 +1402,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-b974a960.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-6ae7b913.mjs').then((m) => m.default || m)
   },
   {
     name: "shop",
@@ -1411,7 +1411,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-627fb2a2.mjs').then((m) => m.default || m)
+    component: () => import('./index-65272837.mjs').then((m) => m.default || m)
   },
   {
     name: "signup",
@@ -1429,7 +1429,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./test-44858544.mjs').then((m) => m.default || m)
+    component: () => import('./test-739c1d0f.mjs').then((m) => m.default || m)
   },
   {
     name: "thanksyou",

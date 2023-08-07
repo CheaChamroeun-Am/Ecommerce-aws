@@ -23,7 +23,7 @@ const handleAllSearch = () => {
   queryTimeout.value = setTimeout(async () => {
     if (searchTerm !== "") {
       const res = await axios.get(
-        `http://3.90.217.148:3002/api/products/${searchTerm.value}`
+        `http://18.208.219.245:3002/api/products/${searchTerm.value}`
       );
       console.log(res.data);
     }

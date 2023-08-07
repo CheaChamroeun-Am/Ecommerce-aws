@@ -9,8 +9,14 @@
         cover
       >
         <div class="text-overlay">
-          <p class="text"  data-aos="fade-right" data-aos-delay="500">#Checkout</p>
-          <p class="text-white text-center" data-aos="fade-up" data-aos-delay="500">
+          <p class="text" data-aos="fade-right" data-aos-delay="500">
+            #Checkout
+          </p>
+          <p
+            class="text-white text-center"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </p>
         </div>
@@ -18,13 +24,17 @@
     </v-card>
 
     <v-container>
-      <h1 class="fw-bold mt-5 fadeRight" data-aos="fade-right" data-aos-delay="500">
+      <h1
+        class="fw-bold mt-5 fadeRight"
+        data-aos="fade-right"
+        data-aos-delay="500"
+      >
         Billing
         <span style="color: #6b7280">Details</span>
       </h1>
 
       <v-form v-model="valid" @submit.prevent="handleCheckout">
-        <v-row >
+        <v-row>
           <v-col cols="12" md="8" data-aos="fade-up" data-aos-delay="500">
             <v-card class="pa-5 mt-10">
               <v-row>
@@ -128,41 +138,70 @@
 
           <v-col cols="12" md="4">
             <v-card class="pa-5 mt-10">
-              <div class="d-flex align-center justify-space-between" data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Product</p>
                 <p class="ms-10">Subtotal</p>
               </div>
               <div
-                class="d-flex mt-5 align-center justify-space-between"  data-aos="fade-right" data-aos-delay="500"
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
                 v-for="cart in $store.state.carts"
                 :key="cart"
               >
-                <p>{{ cart.product.name }} x <v-badge  :content="cart.quantity" inline></v-badge> </p>
+                <p>
+                  {{ cart.product.name }} x
+                  <v-badge :content="cart.quantity" inline></v-badge>
+                </p>
                 <p class="ms-10">${{ cart.product.price }}.00</p>
               </div>
-              <div class="d-flex mt-5 align-center justify-space-between"  data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Subtotal</p>
                 <p class="ms-10">${{ $store.getters["subTotalPrice"] }}.00</p>
               </div>
 
-              <div class="d-flex mt-5 align-center justify-space-between"  data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Tax(10%)</p>
                 <p class="ms-10">
                   ${{ formatNumber($store.getters["taxPrice"]) }}
                 </p>
               </div>
 
-              <div class="d-flex mt-5 align-center justify-space-between"  data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Delivery Fee</p>
                 <p class="ms-10">$3.00</p>
               </div>
 
-              <div class="d-flex mt-5 align-center justify-space-between"  data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Discount</p>
                 <p class="ms-10">-$20.00</p>
               </div>
 
-              <div class="d-flex mt-5 align-center justify-space-between" data-aos="fade-right" data-aos-delay="500">
+              <div
+                class="d-flex mt-5 align-center justify-space-between"
+                data-aos="fade-right"
+                data-aos-delay="500"
+              >
                 <p>Total</p>
                 <p
                   class="ms-10 font-weight-bold"
@@ -172,7 +211,12 @@
                 </p>
               </div>
 
-              <div class="mt-10" style="border-top: 1px solid gray"  data-aos="fade-up" data-aos-delay="500">
+              <div
+                class="mt-10"
+                style="border-top: 1px solid gray"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <p class="mt-10">
                   Your personal data will be used to support your experience
                   throughout this website, to manage access to your account, and
@@ -218,9 +262,7 @@ const country = ref("");
 
 definePageMeta({
   middleware: ["auth"],
-})
-
-
+});
 
 const firstnameRules = [
   (v) => !!v || "First name is required",
@@ -312,7 +354,7 @@ const handleCheckout = () => {
         onApprove: async (data, actions) => {
           const token = Cookies.get("token");
           console.log(carts.value);
-          await fetch("http://3.90.217.148:3002/api/orders", {
+          await fetch("http://18.208.219.245:3002/api/orders", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
